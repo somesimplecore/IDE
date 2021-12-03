@@ -1,9 +1,9 @@
 from PIL import Image
 import numpy as np
 
-img = Image.open(input("Введите имя исходного изображения: "))
-mosaicSize = int(input("Введите размер мозаики: "))
-input_grayscale = int(input("Введите желаемую градацию серого: "))
+img = Image.open("img2.jpg")
+mosaicSize = 10
+input_grayscale = 50
 
 
 def get_mosaic_img(image, mosaic_size, grayscale):
@@ -23,5 +23,4 @@ def get_mosaic_img(image, mosaic_size, grayscale):
     return Image.fromarray(arr)
 
 
-get_mosaic_img(img, mosaicSize, input_grayscale).save(input("Введите имя результирующего изображения: "))
-help(get_mosaic_img)
+get_mosaic_img(img, mosaicSize, input_grayscale).save("res.jpg")
